@@ -3,7 +3,7 @@ import Navigation from '../components/Navigation';
 import verbData from '../verb-list-spanish.json';
 import VerbList from '../components/VerbList';
 
-const Home = () => {
+const Verbs = () => {
   return (
       <>
         <Navigation />
@@ -17,4 +17,4 @@ const Home = () => {
   )
 };
 
-export default Home;
+export default Verbs;
