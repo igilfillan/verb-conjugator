@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const VerbList = ( {data} ) => {
 
@@ -11,7 +12,7 @@ const VerbList = ( {data} ) => {
       uniqueVerbs.push(verb.infinitive);
     }
 
-    return isUnique ? <li key={verb.infinitive}>{verb.infinitive}</li> : null;
+    return isUnique ? <li key={verb.infinitive}><Link to={`/verb/${verb.infinitive}`}>{verb.infinitive}</Link></li> : null;
 
   });
 
