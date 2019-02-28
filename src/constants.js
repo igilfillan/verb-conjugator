@@ -1,3 +1,13 @@
+
+export const formMap = {
+  'form_1s': 'fs',
+  'form_2s': 'ss',
+  'form_3s': 'ts',
+  'form_1p': 'fp',
+  'form_2p': 'sp',
+  'form_3p': 'tp'
+}
+
 export const formLabels = {
   fs: 'yo',
   ss: 'tú',
@@ -20,3 +30,4 @@ export const moodLabels = {
   subjuntivo: 'subjunctive',
   imperativo: 'imperative'
 }
+

@@ -1,3 +1,5 @@
+import { formMap, formLabels } from '../constants';
+
 export const getTense = (data, tense) => {
 
   const tenseData = data.filter( obj => obj.tense === tense)[0];
@@ -19,28 +21,33 @@ export const getMood = (data, mood) => {
   });
 };
 
-export const getForm = (data, form) => {
-  console.log('data', data);
+export const merge = (objects) => {
+  let out = {};
 
-  console.log('form', form);
+  for (let i = 0; i < objects.length; i++) {
+    for (let p in objects[i]) {
+      out[p] = objects[i][p];
+    }
+  }
+
+  return out;
+};
+
+
+const getFormLabel = (form) => {
+  return formLabels[formMap[form]];
+};
+
+export const getForm = (data, form) => {
 
   const formData = data.map( (obj) => {
-
     return {
-      [obj.tense]: obj[form]
+      [obj.tense.toLowerCase()]: obj[form]
     }
-
-
   });
 
-  console.log('formData', formData);
-  console.log('formData flat', formData.flat());
+  let mergedData = merge(formData);
+  mergedData.label = getFormLabel(form);
+  return mergedData;
 
-
-  //
-  // return {
-  //   form: form,
-  //   presente: 'blah',
-  //   preterito: 'blahe'
-  // }
 };
