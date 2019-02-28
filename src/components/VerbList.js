@@ -1,6 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+
+
 const VerbList = ( {data} ) => {
 
   let uniqueVerbs = [];
@@ -12,14 +17,20 @@ const VerbList = ( {data} ) => {
       uniqueVerbs.push(verb.infinitive);
     }
 
-    return isUnique ? <li key={verb.infinitive}><Link to={`/verb/${verb.infinitive}`}>{verb.infinitive}</Link></li> : null;
+    return isUnique
+    ? <Link to={`/verb/${verb.infinitive}`}>
+          <ListItem button divider>
+          <ListItemText primary={verb.infinitive}/>
+        </ListItem>
+        </Link>
+    : <React.Fragment />
 
   });
 
   return (
-      <ol>
+      <List component="nav">
         {verbListItems}
-      </ol>
+      </List>
 
   );
 };

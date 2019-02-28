@@ -1,82 +1,63 @@
 import React from 'react';
+import { getTense } from '../utils/utils';
+import {formLabels, tenseLabels} from "../constants";
 
-const ConjugationTable = ( {data} ) => {
+const SubjuntivoTable = ({data} ) => {
 
-   const getTense = (tense) => {
-        return data.find( (obj) => {
-            return obj.tense === tense;
-        });
-    };
-
-   console.log('data', data);
-    const presente = getTense('Presente');
-    const preterito = getTense('Pretérito');
-    const imperfecto = getTense('Imperfecto');
-    const condicional = getTense('Condicional');
-    const futuro = getTense('Futuro');
+    const presente = getTense(data, 'Presente');
+    const imperfecto = getTense(data, 'Imperfecto');
+    const futuro = getTense(data, 'Futuro');
 
     return (
             <table>
                 <thead>
                 <tr>
                     <th>
-                        <h2>Present</h2>
+                      {tenseLabels.presente}
                     </th>
                     <th>
-                        <h2>Preterito</h2>
+                      {tenseLabels.imperfecto}
                     </th>
                     <th>
-                        <h2>Imperfecto</h2>
-                    </th>
-                    <th>
-                        <h2>Condicional</h2>
-                    </th>
-                    <th>
-                        <h2>Futuro</h2>
+                      {tenseLabels.futuro}
                     </th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
+                  <th scope="row">{formLabels.fs}</th>
                     <td>{presente.form_1s}</td>
-                    <td>{preterito.form_1s} </td>
                     <td>{imperfecto.form_1s} </td>
-                    <td>{condicional.form_1s} </td>
                     <td>{futuro.form_1s} </td>
                 </tr>
                 <tr>
+                  <th scope="row">{formLabels.ss}</th>
                     <td>{presente.form_2s} </td>
-                    <td>{preterito.form_2s} </td>
                     <td>{imperfecto.form_2s} </td>
-                    <td>{condicional.form_2s} </td>
                     <td>{futuro.form_2s} </td>
                 </tr>
                 <tr>
+                  <th scope="row">{formLabels.ts}</th>
                     <td>{presente.form_3s} </td>
-                    <td>{preterito.form_3s} </td>
                     <td>{imperfecto.form_3s} </td>
-                    <td>{condicional.form_3s} </td>
                     <td>{futuro.form_3s} </td>
                 </tr>
                 <tr>
+                  <th scope="row">{formLabels.fp}</th>
                     <td>{presente.form_1p} </td>
-                    <td>{preterito.form_1p} </td>
                     <td>{imperfecto.form_1p} </td>
-                    <td>{condicional.form_1p} </td>
                     <td>{futuro.form_1p} </td>
                 </tr>
                 <tr>
+                  <th scope="row">{formLabels.sp}</th>
                     <td>{presente.form_2p} </td>
-                    <td>{preterito.form_2p} </td>
                     <td>{imperfecto.form_2p} </td>
-                    <td>{condicional.form_2p} </td>
                     <td>{futuro.form_2p} </td>
                 </tr>
                 <tr>
+                  <th scope="row">{formLabels.tp}</th>
                     <td>{presente.form_3p} </td>
-                    <td>{preterito.form_3p} </td>
                     <td>{imperfecto.form_3p} </td>
-                    <td>{condicional.form_3p} </td>
                     <td>{futuro.form_3p} </td>
                 </tr>
                 </tbody>
@@ -86,4 +67,4 @@ const ConjugationTable = ( {data} ) => {
 
 };
 
-export default ConjugationTable;
+export default SubjuntivoTable;

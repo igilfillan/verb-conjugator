@@ -3,16 +3,16 @@ import Navigation from '../components/Navigation';
 import verbData from '../verb-list-spanish.json';
 import VerbList from '../components/VerbList';
 
+
 const Verbs = () => {
   return (
       <>
         <Navigation />
         <header className="App-header">
-          Todos los verbos
-
-          <VerbList data={verbData} />
-
+          Verbos
         </header>
+
+        <VerbList data={verbData} />
         </>
   )
 };

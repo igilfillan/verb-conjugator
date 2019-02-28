@@ -3,6 +3,7 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Verbs from './pages/Verbs';
 import Verb from './pages/Verb';
+// import 'typeface-roboto';
 
 import './App.css';
 

@@ -1,8 +1,11 @@
 
 body{
-  background-color: #282c34;
-  color: aliceblue;
+  color: #84aaa9;
+  padding: 2em;
 
+}
+nav a{
+  text-decoration: none;
 }
 
 .App {
@@ -20,9 +23,7 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
-  color: white;
-}
+  font-size: 3rem;}
 
 .App-link {
   color: #61dafb;
