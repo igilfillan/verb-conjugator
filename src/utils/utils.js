@@ -1,4 +1,5 @@
 import { formMap, formLabels } from '../constants';
+import removeAccents from 'remove-accents';
 
 export const getTense = (data, tense) => {
 
@@ -38,11 +39,18 @@ const getFormLabel = (form) => {
   return formLabels[formMap[form]];
 };
 
+export const getImperatives = (afirmative, negative) => {
+
+  return {
+
+  }
+};
+
 export const getForm = (data, form) => {
 
   const formData = data.map( (obj) => {
     return {
-      [obj.tense.toLowerCase()]: obj[form]
+      [removeAccents(obj.tense.toLowerCase())]: obj[form]
     }
   });
 

@@ -1,70 +1,54 @@
 import React from 'react';
-import { getTense } from '../utils/utils';
-import {formLabels, tenseLabels} from "../constants";
+import { getForm } from '../utils/utils';
+import { tenseLabels } from "../constants";
+
+import Table from '@material-ui/core/Table';
+import TableHead from '@material-ui/core/TableHead';
+import TableBody from '@material-ui/core/TableBody';
+import TableRow from '@material-ui/core/TableRow';
+import TableCell from '@material-ui/core/TableCell';
 
 const SubjuntivoTable = ({data} ) => {
 
-    const presente = getTense(data, 'Presente');
-    const imperfecto = getTense(data, 'Imperfecto');
-    const futuro = getTense(data, 'Futuro');
+  const orderedForms = [
+    getForm(data, 'form_1s'),
+    getForm(data, 'form_2s'),
+    getForm(data, 'form_3s'),
+    getForm(data, 'form_1p'),
+    getForm(data, 'form_2p'),
+    getForm(data, 'form_3p')
+  ];
 
-    return (
-            <table>
-                <thead>
-                <tr>
-                    <th>
-                      {tenseLabels.presente}
-                    </th>
-                    <th>
-                      {tenseLabels.imperfecto}
-                    </th>
-                    <th>
-                      {tenseLabels.futuro}
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <th scope="row">{formLabels.fs}</th>
-                    <td>{presente.form_1s}</td>
-                    <td>{imperfecto.form_1s} </td>
-                    <td>{futuro.form_1s} </td>
-                </tr>
-                <tr>
-                  <th scope="row">{formLabels.ss}</th>
-                    <td>{presente.form_2s} </td>
-                    <td>{imperfecto.form_2s} </td>
-                    <td>{futuro.form_2s} </td>
-                </tr>
-                <tr>
-                  <th scope="row">{formLabels.ts}</th>
-                    <td>{presente.form_3s} </td>
-                    <td>{imperfecto.form_3s} </td>
-                    <td>{futuro.form_3s} </td>
-                </tr>
-                <tr>
-                  <th scope="row">{formLabels.fp}</th>
-                    <td>{presente.form_1p} </td>
-                    <td>{imperfecto.form_1p} </td>
-                    <td>{futuro.form_1p} </td>
-                </tr>
-                <tr>
-                  <th scope="row">{formLabels.sp}</th>
-                    <td>{presente.form_2p} </td>
-                    <td>{imperfecto.form_2p} </td>
-                    <td>{futuro.form_2p} </td>
-                </tr>
-                <tr>
-                  <th scope="row">{formLabels.tp}</th>
-                    <td>{presente.form_3p} </td>
-                    <td>{imperfecto.form_3p} </td>
-                    <td>{futuro.form_3p} </td>
-                </tr>
-                </tbody>
-            </table>
-
-    )
-
+  return (
+      <Table padding='dense'>
+        <TableHead>
+          <TableRow variant='head'>
+            <TableCell scope="col">Form</TableCell>
+            <TableCell>
+              {tenseLabels.presente}
+            </TableCell>
+            <TableCell>
+              {tenseLabels.imperfecto}
+            </TableCell>
+            <TableCell>
+              {tenseLabels.futuro}
+            </TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {orderedForms.map( (form) => {
+            return(
+                <TableRow hover>
+                  <TableCell component='th' scope="row">{form.label}</TableCell>
+                  <TableCell>{form.presente}</TableCell>
+                  <TableCell>{form.imperfecto} </TableCell>
+                  <TableCell>{form.futuro} </TableCell>
+                </TableRow>
+            )
+          })}
+        </TableBody>
+      </Table>
+  )
 };
 
 export default SubjuntivoTable;

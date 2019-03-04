@@ -48,7 +48,7 @@ const IndicativoTable = ({data} ) => {
                       <TableRow hover>
                         <TableCell component='th' scope="row">{form.label}</TableCell>
                         <TableCell>{form.presente}</TableCell>
-                        <TableCell>{form.pretérito} </TableCell>
+                        <TableCell>{form.preterito} </TableCell>
                         <TableCell>{form.imperfecto} </TableCell>
                         <TableCell>{form.condicional} </TableCell>
                         <TableCell>{form.futuro} </TableCell>
