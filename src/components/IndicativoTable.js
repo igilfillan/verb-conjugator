@@ -17,46 +17,46 @@ const IndicativoTable = ({data} ) => {
       getForm(data, 'form_1p'),
       getForm(data, 'form_2p'),
       getForm(data, 'form_3p')
-    ]
+    ];
 
 
     return (
-            <Table padding='dense'>
-                <TableHead>
-                <TableRow variant='head'>
-                  <TableCell scope="col">Form</TableCell>
-                    <TableCell>
-                        {tenseLabels.presente}
-                    </TableCell>
-                  <TableCell>
-                        {tenseLabels.preterito}
-                    </TableCell>
-                  <TableCell>
-                        {tenseLabels.imperfecto}
-                    </TableCell>
-                  <TableCell>
-                        {tenseLabels.condicional}
-                    </TableCell>
-                  <TableCell>
-                        {tenseLabels.futuro}
-                    </TableCell>
+      <Table padding='dense'>
+          <TableHead>
+          <TableRow variant='head'>
+            <TableCell scope="col">Form</TableCell>
+              <TableCell>
+                  {tenseLabels.presente}
+              </TableCell>
+            <TableCell>
+                  {tenseLabels.preterito}
+              </TableCell>
+            <TableCell>
+                  {tenseLabels.imperfecto}
+              </TableCell>
+            <TableCell>
+                  {tenseLabels.condicional}
+              </TableCell>
+            <TableCell>
+                  {tenseLabels.futuro}
+              </TableCell>
+          </TableRow>
+          </TableHead>
+          <TableBody>
+            {orderedForms.map( (form) => {
+              return(
+                <TableRow hover key={form.label}>
+                  <TableCell component='th' scope="row">{form.label}</TableCell>
+                  <TableCell>{form.presente}</TableCell>
+                  <TableCell>{form.preterito} </TableCell>
+                  <TableCell>{form.imperfecto} </TableCell>
+                  <TableCell>{form.condicional} </TableCell>
+                  <TableCell>{form.futuro} </TableCell>
                 </TableRow>
-                </TableHead>
-                <TableBody>
-                  {orderedForms.map( (form) => {
-                    return(
-                      <TableRow hover>
-                        <TableCell component='th' scope="row">{form.label}</TableCell>
-                        <TableCell>{form.presente}</TableCell>
-                        <TableCell>{form.preterito} </TableCell>
-                        <TableCell>{form.imperfecto} </TableCell>
-                        <TableCell>{form.condicional} </TableCell>
-                        <TableCell>{form.futuro} </TableCell>
-                      </TableRow>
-                    )
-                  })}
-                </TableBody>
-            </Table>
+              )
+            })}
+          </TableBody>
+      </Table>
     )
 
 };

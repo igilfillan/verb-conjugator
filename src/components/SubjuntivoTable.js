@@ -38,7 +38,7 @@ const SubjuntivoTable = ({data} ) => {
         <TableBody>
           {orderedForms.map( (form) => {
             return(
-                <TableRow hover>
+                <TableRow hover key={form.label}>
                   <TableCell component='th' scope="row">{form.label}</TableCell>
                   <TableCell>{form.presente}</TableCell>
                   <TableCell>{form.imperfecto} </TableCell>

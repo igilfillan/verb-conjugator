@@ -23,11 +23,12 @@ export const tenseLabels = {
   imperfecto: 'imperfect',
   condicional: 'conditional',
   futuro: 'future'
-}
+};
 
 export const moodLabels = {
   indicativo: 'indicative',
   subjuntivo: 'subjunctive',
   imperativo: 'imperative'
-}
+};
 
+export const blankLabel = '--';

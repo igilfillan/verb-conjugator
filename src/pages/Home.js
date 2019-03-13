@@ -1,9 +1,6 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
 
-// import Home from '../components/'
-
-
 const Home = () => {
   return (
         <>

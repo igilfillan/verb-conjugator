@@ -3,12 +3,15 @@ import Navigation from '../components/Navigation';
 import IndicativoTable from '../components/IndicativoTable';
 import SubjuntivoTable from '../components/SubjuntivoTable';
 import ImperativoTable from '../components/ImperativoTable';
+import VerbTable from '../components/VerbTable';
+import VerbTableHead from '../components/VerbTableHead';
+
 import verbData from '../verb-list-spanish.json';
 import { getMood } from '../utils/utils';
 import { moodLabels } from '../constants';
 
 
-import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
 
 
 
@@ -33,26 +36,26 @@ class Verb extends Component {
         <>
           <Navigation />
 
-          <header className="App-header">
+            <Typography align='center' variant='headline'>
             {match.params.infinitive}
-          </header>
+          </Typography>
 
-          <p>{this.state.verbEntries[0].infinitive_english}</p>
+          <Typography variant="body1">{this.state.verbEntries[0].infinitive_english}</Typography>
 
-          <Paper>
-            <h2>{moodLabels.indicativo}</h2>
+          <VerbTable>
+            <Typography align='center' variant='subheading'>{moodLabels.indicativo}</Typography>
             <IndicativoTable data={getMood(this.state.verbEntries, 'Indicativo')} />
-          </Paper>
+          </VerbTable>
 
-          <Paper>
-            <h2>{moodLabels.subjuntivo}</h2>
+          <VerbTable>
+            <VerbTableHead>{moodLabels.subjuntivo}</VerbTableHead>
             <SubjuntivoTable data={getMood(this.state.verbEntries, 'Subjuntivo')} />
-          </Paper>
+          </VerbTable>
 
-          <Paper>
-           <h2>{moodLabels.imperativo}</h2>
+          <VerbTable>
+           <Typography align='center' variant='subheading'>{moodLabels.imperativo}</Typography>
           <ImperativoTable afirmativo={getMood(this.state.verbEntries, 'Imperativo Afirmativo')} negativo={getMood(this.state.verbEntries, 'Imperativo Negativo')} />
-          </Paper>
+          </VerbTable>
         </>
     )
   }
