@@ -34,16 +34,8 @@ export const merge = (objects) => {
   return out;
 };
 
-
 const getFormLabel = (form) => {
   return formLabels[formMap[form]];
-};
-
-export const getImperatives = (afirmative, negative) => {
-
-  return {
-
-  }
 };
 
 export const getForm = (data, form) => {
