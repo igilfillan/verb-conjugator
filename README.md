@@ -1,3 +1,4 @@
+# Tool to help learn Spanish Verb Conjugations
 For me, the most difficult part about learning Spanish, is the verb conjugations. This personal project is to build a tool to help with conjugating verbs in all moods and tenses. You will be able to choose which verbs you want to conjugate and which mood and tense.
 
 -------------------------------
