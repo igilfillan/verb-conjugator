@@ -1,3 +1,7 @@
+For me, the most difficult part about learning Spanish, is the verb conjugations. This personal project is to build a tool to help with conjugating verbs in all moods and tenses. You will be able to choose which verbs you want to conjugate and which mood and tense.
+
+-------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 Source for verbs:  https://github.com/ghidinelli/fred-jehle-spanish-verbs/blob/master/jehle_verb_database.csv
 
