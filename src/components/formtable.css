@@ -1,0 +1,16 @@
+.isCorrect{
+}
+
+.inputCell{
+    padding-right: 10px;
+    position: relative;
+    /*display: inline-block;*/
+}
+.isCorrect:after{
+    content: "T";
+    display: inline-block;
+    position: absolute ;
+    right: 0;
+    color: green;
+
+}
